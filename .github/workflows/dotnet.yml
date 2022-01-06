@@ -12,13 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - working-directory: 'YnovDevops2'
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
+      working-directory: 'YnovDevops2'
       run: dotnet restore
     - name: Build
+      working-directory: 'YnovDevops2'
       run: dotnet build --no-restore
